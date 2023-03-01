@@ -14,6 +14,7 @@ const state = proxy({
     band: "#ffffff",
     patch: "#ffffff",
     ['Glass Basic White #2']:"#000000",
+    removeCase:false
   },
 });
 

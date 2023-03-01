@@ -13,7 +13,7 @@ import { useFrame } from '@react-three/fiber'
 import { useSnapshot } from "valtio"
 import state from "../state"
 
-export function HB(props) {
+export function Case(props) {
 
 
   const [hovered, setHovered] = useState(null);
@@ -142,14 +142,14 @@ export function HB(props) {
             <mesh  geometry={nodes['1344715243_1'].geometry} material={materials['Paint Matte Black #1 #3']} position={[-0.01, -0.05, -0.4]} rotation={[0, 0, -Math.PI / 2]} />
             <mesh  geometry={nodes['1344715244'].geometry} material={materials['Paint Matte Black #4']} />
           </group>
-          <mesh  geometry={nodes['1344715242'].geometry} material={materials['Glass Basic White #2']} material-color={snap.items['Glass Basic White #2']} />
+          <mesh  geometry={nodes['1344715242'].geometry} material={materials['Glass Basic White #2']} material-color={snap.items['Glass Basic White #2']}  visible={!snap.items.removeCase} />
           <mesh  geometry={nodes['1344715243'].geometry} material={materials['Paint Matte Black #1 #3']} />
           <mesh  geometry={nodes['1344715245'].geometry} material={materials['Hard Shiny Plastic Black #2']} position={[-0.4, 3.86, 4.3]} rotation={[Math.PI / 2, 0, 0]} />
           <mesh  geometry={nodes['1344715245_1'].geometry} material={materials['Anodized Aluminum Rough Black #2']} position={[1.37, 0.86, 4.28]} rotation={[-1.18, 0, Math.PI]} />
           <mesh  geometry={nodes['1344715246'].geometry} material={materials['Anodized Aluminum Rough Black #2']} position={[1.37, 2.21, 4.28]} rotation={[-1.18, 0, Math.PI]} />
           <mesh  geometry={nodes['1344715246_1'].geometry} material={materials['Anodized Aluminum Rough Black #2']} position={[1.37, 3.56, 4.28]} rotation={[-1.18, 0, Math.PI]} />
           <mesh  geometry={nodes['1344732233'].geometry} material={materials['Paint Matte Black #1 #3']} />
-          <mesh  geometry={nodes['1344732233_1'].geometry} material={materials['Glass Basic White #2']} />
+          <mesh  geometry={nodes['1344732233_1'].geometry} material={materials['Glass Basic White #2']} visible={!snap.items.removeCase} />
           <mesh  geometry={nodes['1346367342'].geometry} material={materials['Paint Matte Black #4']} />
           <mesh  geometry={nodes['1344732234'].geometry} material={materials['Anodized Aluminum Rough Black #2']} position={[-1.2, 3.79, 3.68]} rotation={[0, 0, Math.PI / 2]} />
           <mesh  geometry={nodes['1344732234_1'].geometry} material={materials['Mold-Tech-11020 #3']} rotation={[-Math.PI / 2, 0, 0]} />
@@ -163,7 +163,7 @@ export function HB(props) {
             <mesh  geometry={nodes['1344755257_1'].geometry} material={materials['Paint Matte Black #1 #3']} position={[-0.01, -1, -0.05]} rotation={[0, 0, -Math.PI / 2]} />
           </group>
           <mesh  geometry={nodes['1344755258'].geometry} material={materials['Paint Matte Black #1 #3']} />
-          <mesh  geometry={nodes['1344755258_1'].geometry} material={materials['Glass Basic White #2']} />
+          <mesh  geometry={nodes['1344755258_1'].geometry} material={materials['Glass Basic White #2']} visible={!snap.items.removeCase} />
           <mesh  geometry={nodes['1344755258_2'].geometry} material={materials['Paint Matte Black #4']} />
           <mesh  geometry={nodes['1344755258_3'].geometry} material={materials['Hard Shiny Plastic Black #2']} position={[-1.32, 3.86, 2.92]} rotation={[Math.PI / 2, 0, Math.PI / 2]} />
           <mesh  geometry={nodes['1344755259'].geometry} material={materials['Hard Shiny Plastic Black #2']} position={[-1.32, 3.86, 1.13]} rotation={[Math.PI / 2, 0, Math.PI / 2]} />
