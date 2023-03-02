@@ -13,7 +13,7 @@ const state = proxy({
     stripes: "#ffffff",
     band: "#ffffff",
     patch: "#ffffff",
-    ['Glass Basic White #2']:"0xfff1ef",
+    ['Glass Basic White #2']:"#000000",
     removeCase:false
   },
 });
