@@ -35,12 +35,12 @@ export function Case(props) {
       <>
         {/* <planeBufferGeometry attach="geometry" args={[10, 10]} /> */}
 
-         <planeBufferGeometry attach="geometry"  geometry={nodes["1344715242"].geometry} /> 
+        {/* <planeBufferGeometry attach="geometry"  geometry={nodes["1344715242"].geometry} />  */}
         <meshBasicMaterial
           attach="material"
-           map={texture}
-          // opacity={0.8}
-          // transparent
+          map={texture}
+           opacity={0.8}
+           transparent
         />
       </>
     );
@@ -93,7 +93,9 @@ export function Case(props) {
               material={materials["Anodized Aluminum Rough Black #2"]}
               position={[0, 0, -1.24]}
               rotation={[-Math.PI, -1.25, -Math.PI]}
-            />
+            >
+              <Image url={doggos} />
+            </mesh>
             <mesh
               geometry={nodes.M3_standoff_11.geometry}
               material={materials["Anodized Aluminum Rough Black #2"]}
@@ -105,11 +107,15 @@ export function Case(props) {
               material={materials["Mold-Tech-11020 #3"]}
               position={[2.58, -0.8, -3.37]}
               rotation={[Math.PI, 0, 0]}
-            />
+            >
+              <Image url={doggos} />
+            </mesh>
             <mesh
               geometry={nodes["1345348492"].geometry}
               material={materials["Paint Matte Black #4"]}
-            />
+            >
+              <Image url={doggos} />
+            </mesh>
             <mesh
               geometry={nodes["MB-RUBBER-CA-P101_2"].geometry}
               material={materials["Rubber #1 #2"]}
@@ -495,7 +501,7 @@ export function Case(props) {
             material-color={snap.items["Glass Basic White #2"]}
             visible={!snap.items.removeCase}
           >
-            <Image url={doggos} />
+            {/* <Image url={doggos} /> */}
           </mesh>
           <mesh
             geometry={nodes["1344715243"].geometry}
@@ -601,7 +607,7 @@ export function Case(props) {
             visible={!snap.items.removeCase}
           >
             {/* <Image url={doggos} /> */}
-            </mesh>
+          </mesh>
           <mesh
             geometry={nodes["1344755258_2"].geometry}
             material={materials["Paint Matte Black #4"]}
@@ -639,15 +645,21 @@ export function Case(props) {
                 <mesh
                   geometry={nodes.SWITH_LED_1_AF0_1.geometry}
                   material={materials["Anodized Aluminum Rough Black #2"]}
-                />
+                >
+                  <Image url={doggos} />
+                </mesh>
                 <mesh
                   geometry={nodes.SWITH_LED_1_AF0_2.geometry}
                   material={materials["Anodized Aluminum Rough Black #2"]}
-                />
+                >
+                  <Image url={doggos} />
+                </mesh>
                 <mesh
                   geometry={nodes.SWITH_LED_1_AF0_3.geometry}
                   material={materials["Anodized Aluminum Rough Black #2"]}
-                />
+                >
+                  <Image url={doggos} />
+                </mesh>
                 <mesh
                   geometry={nodes.SWITH_LED_1_AF0_4.geometry}
                   material={materials["Anodized Aluminum Rough Black #2"]}
