@@ -499,7 +499,7 @@ export function Case(props) {
             geometry={nodes["1344715242"].geometry}
             material={materials["Glass Basic White #2"]}
             material-color={snap.items["Glass Basic White #2"]}
-            visible={!snap.items.removeCase}
+            visible={!snap.items.showPanel}
           >
             {/* <Image url={doggos} /> */}
           </mesh>
@@ -538,7 +538,7 @@ export function Case(props) {
           <mesh
             geometry={nodes["1344732233_1"].geometry}
             material={materials["Glass Basic White #2"]}
-            visible={!snap.items.removeCase}
+            visible={!snap.items.showPanel}
           >
             {/* <Image url={doggos} /> */}
           </mesh>
@@ -604,7 +604,7 @@ export function Case(props) {
           <mesh
             geometry={nodes["1344755258_1"].geometry}
             material={materials["Glass Basic White #2"]}
-            visible={!snap.items.removeCase}
+            visible={!snap.items.showPanel}
           >
             {/* <Image url={doggos} /> */}
           </mesh>

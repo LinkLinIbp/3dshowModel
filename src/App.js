@@ -10,14 +10,20 @@ import * as THREE from "three";
 function App() {
   const snap = useSnapshot(state);
 
-  const removeCase = () => {
-    state.items.removeCase = !state.items.removeCase;
+  const setPanel = () => {
+    state.items.showPanel = !state.items.showPanel;
   };
+
+
+  const setVideoCard = ()=>{
+    state.items.showVideoCart = !state.items.showVideoCart;
+  }
 
 
   return (
     <>
-      <button onClick={removeCase}>Add / Remove Glass</button>
+      <button onClick={setPanel} style={{margin:5}}>Add / Remove Panel</button>
+      <button onClick={setVideoCard}>Add / Remove Video Card</button>
       <Picker />
       <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 3], fov: 30 }}>
         <ambientLight intensity={0.3} />
@@ -29,7 +35,7 @@ function App() {
         />
         <Suspense fallback={null}>
           <Case />
-          <VideoCard />
+          {snap.items.showVideoCart && <VideoCard />}
           <Environment preset="city" />
           <ContactShadows
             rotation-x={Math.PI / 2}

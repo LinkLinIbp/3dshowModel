@@ -11,7 +11,7 @@ export function VideoCard(props) {
   return (
     <group {...props} dispose={null}>
       <group scale={0.001}>
-        <group position={[-149.617, 3.921, 57.755]}>
+        <group position={[-60, 80, 12]} rotation={[Math.PI/2, 0,Math.PI/2]}>
           <group position={[-0.367, 5.126, -23.982]} rotation={[0, -Math.PI / 2, 0]}>
             <mesh geometry={nodes.displayport_3.geometry} material={materials['displayport:color:26:26:26']} />
             <mesh geometry={nodes.displayport_4.geometry} material={materials['displayport:color:165:158:150']} />
