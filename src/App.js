@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
-import { Picker, Case, Grid } from "./components";
+import { Picker, Case, Grid ,VideoCard} from "./components";
 import { useSnapshot } from "valtio";
 import state from "./state";
 import React, { useMemo } from "react";
@@ -29,6 +29,7 @@ function App() {
         />
         <Suspense fallback={null}>
           <Case />
+          <VideoCard />
           <Environment preset="city" />
           <ContactShadows
             rotation-x={Math.PI / 2}
@@ -39,6 +40,7 @@ function App() {
             blur={1.5}
             far={0.8}
           />
+          
           {/* <Grid width={3} height={3} /> */}
           {/* <Image url={doggos} /> */}
           {/* <Shoe/> */}
