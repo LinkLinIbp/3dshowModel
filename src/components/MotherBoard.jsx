@@ -9,7 +9,7 @@ import { useGLTF } from '@react-three/drei'
 export function MotherBoard(props) {
   const { nodes, materials } = useGLTF('/mother-board.glb')
   return (
-    <group {...props} dispose={null}  position={[0.05,0.1,0]} rotation={[Math.PI, Math.PI/2,0]}>
+    <group {...props} dispose={null}  position={[0.035,0.08,0.01]} rotation={[Math.PI, Math.PI/2,0]}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.001}  >
         <group position={[167.858, 3.437, -220.652]} rotation={[-Math.PI / 2, 0, 0]} >
           <group position={[-33.1, -1.842, -1.857]} rotation={[-Math.PI / 2, 0, Math.PI]}>
