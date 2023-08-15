@@ -4,14 +4,40 @@ Command: npx gltfjsx@6.1.4 HB.gltf --transform
 */
 
 import { useGLTF, PerspectiveCamera } from "@react-three/drei";
-import React, { useMemo } from "react";
+import React, { useMemo ,useRef}  from "react";
 import * as THREE from "three";
 /* eslint-disable no-sequences */
-import { useEffect, useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useEffect, useState } from "react";
 
 import { useSnapshot } from "valtio";
 import state from "../state";
+
+import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
+
+
+// Extend will make these available as JSX components
+extend({ UnrealBloomPass, EffectComposer, RenderPass });
+
+function Bloom() {
+  const { scene, camera, gl, size } = useThree();
+  const composer = useRef();
+  const bloomPass = useRef();
+
+  useFrame(() => composer.current.render(), 1);
+
+  return (
+    <>
+      <effectComposer ref={composer} args={[gl]}>
+        <renderPass attachArray="passes" args={[scene, camera]} />
+        <unrealBloomPass attachArray="passes" ref={bloomPass} args={[new THREE.Vector2(size.width, size.height), 1.5, 0.4, 0.85]} />
+      </effectComposer>
+    </>
+  );
+}
+
 
 export function Case(props) {
   const [hovered, setHovered] = useState(null);
@@ -30,10 +56,34 @@ export function Case(props) {
 
   const fanGroupRef = useRef();
 
-  useFrame(() => {
+  const [colorIdx, setColorIdx] = useState(0);
+  
+
+  const fanMeshRef = useRef();
+
+  // RGB 顏色列表
+  const colors = [
+    new THREE.Color(1, 0, 0),  // Red
+    new THREE.Color(0, 1, 0),  // Green
+    new THREE.Color(0, 0, 1)   // Blue
+  ];
+
+  useFrame(({clock }) => {
     if (fanGroupRef.current) {
       fanGroupRef.current.rotation.z += 0.01; // 控制旋轉速度
     }
+
+    const elapsedTime = clock.getElapsedTime();
+    
+    // 每過 0.5 秒，更換顏色
+    if (elapsedTime % 1 < 0.01) {
+      setColorIdx((prevIdx) => (prevIdx + 1) % colors.length);
+    }
+    
+    if (fanMeshRef.current) {
+      fanMeshRef.current.material.color = colors[colorIdx];
+    }
+    
   });
 
   const stickyPng = "/qUuposdUzA.jpg";
@@ -228,12 +278,16 @@ export function Case(props) {
               />
             </group>
             <group position={[-0.7, 3.01, 0.09]}  >
+                
+
               <group position={[0, 0, 0.02]} ref={fanGroupRef}>
                 <mesh
                   geometry={nodes["ZB-FAN-1110_7"].geometry}
                   material={materials["Translucent Candle Wax #2 #2"]}
                 />
+                {/* <Bloom /> */}
                 <mesh
+                  ref={fanMeshRef}
                   geometry={nodes["ZB-FAN-1110_8"].geometry}
                   material={materials["Translucent Candle Wax #2 #2"]}
                 />
