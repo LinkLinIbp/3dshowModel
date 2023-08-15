@@ -14,7 +14,7 @@ const state = proxy({
     band: "#ffffff",
     patch: "#ffffff",
     ['Glass Basic White #2']:"#ffffff",
-    showPanel:true,
+    showPanel:false,
     showVideoCart:true,
     showMotherBoard:true
   },
