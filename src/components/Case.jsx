@@ -36,7 +36,7 @@ export function Case(props) {
     }
   });
 
-  const doggos = "/qUuposdUzA.jpg";
+  const stickyPng = "/qUuposdUzA.jpg";
   // https://zhuanlan.zhihu.com/p/601278889
   const Texture = ({ texture }) => {
     return (
@@ -54,7 +54,7 @@ export function Case(props) {
     );
   };
 
-  const Image = ({ url }) => {
+  const StickyImage = ({ url }) => {
     const texture = useMemo(() => new THREE.TextureLoader().load(url), [url]);
     texture.rotation = (180 * Math.PI) / 180;
     texture.center.set(0.5, 0.5);
@@ -102,7 +102,7 @@ export function Case(props) {
               position={[0, 0, -1.24]}
               rotation={[-Math.PI, -1.25, -Math.PI]}
             >
-              <Image url={doggos} />
+              {/* <StickyImage url={stickyPng} /> */}
             </mesh>
             <mesh
               geometry={nodes.M3_standoff_11.geometry}
@@ -116,13 +116,13 @@ export function Case(props) {
               position={[2.58, -0.8, -3.37]}
               rotation={[Math.PI, 0, 0]}
             >
-              <Image url={doggos} />
+              {/* <StickyImage url={stickyPng} /> */}
             </mesh>
             <mesh
               geometry={nodes["1345348492"].geometry}
               material={materials["Paint Matte Black #4"]}
             >
-              <Image url={doggos} />
+              {/* <StickyImage url={stickyPng} /> */}
             </mesh>
             <mesh
               geometry={nodes["MB-RUBBER-CA-P101_2"].geometry}
@@ -507,9 +507,9 @@ export function Case(props) {
             geometry={nodes["1344715242"].geometry}
             material={materials["Glass Basic White #2"]}
             material-color={snap.items["Glass Basic White #2"]}
-            visible={!snap.items.showPanel}
+            visible={snap.items.showPanel}
           >
-            {/* <Image url={doggos} /> */}
+            {/* <StickyImage url={stickyPng} /> */}
           </mesh>
           <mesh
             geometry={nodes["1344715243"].geometry}
@@ -546,9 +546,9 @@ export function Case(props) {
           <mesh
             geometry={nodes["1344732233_1"].geometry}
             material={materials["Glass Basic White #2"]}
-            visible={!snap.items.showPanel}
+            visible={snap.items.showPanel}
           >
-            {/* <Image url={doggos} /> */}
+            {/* <StickyImage url={stickyPng} /> */}
           </mesh>
           <mesh
             geometry={nodes["1346367342"].geometry}
@@ -612,9 +612,9 @@ export function Case(props) {
           <mesh
             geometry={nodes["1344755258_1"].geometry}
             material={materials["Glass Basic White #2"]}
-            visible={!snap.items.showPanel}
+            visible={snap.items.showPanel}
           >
-            {/* <Image url={doggos} /> */}
+            {/* <StickyImage url={stickyPng} /> */}
           </mesh>
           <mesh
             geometry={nodes["1344755258_2"].geometry}
@@ -654,19 +654,19 @@ export function Case(props) {
                   geometry={nodes.SWITH_LED_1_AF0_1.geometry}
                   material={materials["Anodized Aluminum Rough Black #2"]}
                 >
-                  <Image url={doggos} />
+                  {/* <StickyImage url={stickyPng} /> */}
                 </mesh>
                 <mesh
                   geometry={nodes.SWITH_LED_1_AF0_2.geometry}
                   material={materials["Anodized Aluminum Rough Black #2"]}
                 >
-                  <Image url={doggos} />
+                  {/* <StickyImage url={stickyPng} /> */}
                 </mesh>
                 <mesh
                   geometry={nodes.SWITH_LED_1_AF0_3.geometry}
                   material={materials["Anodized Aluminum Rough Black #2"]}
                 >
-                  <Image url={doggos} />
+                  {/* <<StickyImage url={stickyPng} />> */}
                 </mesh>
                 <mesh
                   geometry={nodes.SWITH_LED_1_AF0_4.geometry}

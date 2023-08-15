@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
-import { Picker, Case, Grid ,VideoCard} from "./components";
+import { Picker, Case, Grid, VideoCard, MotherBoard } from "./components";
 import { useSnapshot } from "valtio";
 import state from "./state";
 import React, { useMemo } from "react";
@@ -10,20 +10,29 @@ import * as THREE from "three";
 function App() {
   const snap = useSnapshot(state);
 
-  const setPanel = () => {
+  const setShowPanel = () => {
     state.items.showPanel = !state.items.showPanel;
   };
 
-
-  const setVideoCard = ()=>{
+  const setShowVideoCard = () => {
     state.items.showVideoCart = !state.items.showVideoCart;
-  }
+  };
 
+  const setShowMotherBoard = () => {
+    state.items.showMotherBoard = !state.items.showMotherBoard;
+  };
 
   return (
     <>
-      <button onClick={setPanel} style={{margin:5}}>Add / Remove Panel</button>
-      <button onClick={setVideoCard}>Add / Remove Video Card</button>
+      <button onClick={setShowPanel} style={{ margin: 4 }}>
+        Add / Remove Panel
+      </button>
+      <button onClick={setShowVideoCard} style={{ margin: 4 }}>
+        Add / Remove Video Card
+      </button>
+      <button onClick={setShowMotherBoard} style={{ margin: 4 }}>
+        Add / Remove MotherBoard
+      </button>
       <Picker />
       <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 3], fov: 30 }}>
         <ambientLight intensity={0.3} />
@@ -46,7 +55,9 @@ function App() {
             blur={1.5}
             far={0.8}
           />
-          
+          {snap.items.showMotherBoard &&  <MotherBoard />}
+         
+
           {/* <Grid width={3} height={3} /> */}
           {/* <Image url={doggos} /> */}
           {/* <Shoe/> */}
