@@ -28,6 +28,14 @@ export function Case(props) {
   //   group.current.position.y = (1 + Math.sin(t / 1.5)) / 10;
   // });
 
+  const fanGroupRef = useRef();
+
+  useFrame(() => {
+    if (fanGroupRef.current) {
+      fanGroupRef.current.rotation.z += 0.01; // 控制旋轉速度
+    }
+  });
+
   const doggos = "/qUuposdUzA.jpg";
   // https://zhuanlan.zhihu.com/p/601278889
   const Texture = ({ texture }) => {
@@ -219,8 +227,8 @@ export function Case(props) {
                 rotation={[-Math.PI / 2, 0, 0]}
               />
             </group>
-            <group position={[-0.7, 3.01, 0.09]}>
-              <group position={[0, 0, 0.02]}>
+            <group position={[-0.7, 3.01, 0.09]}  >
+              <group position={[0, 0, 0.02]} ref={fanGroupRef}>
                 <mesh
                   geometry={nodes["ZB-FAN-1110_7"].geometry}
                   material={materials["Translucent Candle Wax #2 #2"]}
