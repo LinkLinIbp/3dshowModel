@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
-import { Picker, Case, VideoCard, MotherBoard } from "./components";
+import { Picker, Case, VideoCard, MotherBoard ,Power } from "./components";
 import { useSnapshot } from "valtio";
 import state from "./state";
 import React, { useMemo } from "react";
@@ -45,6 +45,7 @@ function App() {
         <Suspense fallback={null}>
           <Case />
           {snap.items.showVideoCart && <VideoCard />}
+          <Power />
           <Environment preset="city" />
           <ContactShadows
             rotation-x={Math.PI / 2}

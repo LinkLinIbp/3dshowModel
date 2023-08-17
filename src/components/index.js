@@ -4,3 +4,4 @@ export * from "./Case";
 export * from "./Grid";
 export * from "./VideoCard"
 export * from "./MotherBoard"
+export * from "./Power"
