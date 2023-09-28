@@ -1,0 +1,12 @@
+.containerDiv{
+    border-radius: 3px;
+    
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    height: auto;
+}
+.insetDiv{
+    background-color: var(--panel-background-color);
+    padding: 15px;
+}

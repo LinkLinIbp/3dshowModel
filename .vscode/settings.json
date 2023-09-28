@@ -1,0 +1,12 @@
+{
+    "eslint.problems.shortenToSingleLine": false,
+    "prettier.enableDebugLogs": true,
+    "vs-code-prettier-eslint.prettierLast": true,
+    "prettier.enable": true,
+    "prettier.useEditorConfig": true,
+    "prettier.useTabs": true,
+    "prettier.singleQuote": true,
+    "prettier.singleAttributePerLine": true,
+    "prettier.resolveGlobalModules": false,
+    "prettier.jsxSingleQuote": true
+}

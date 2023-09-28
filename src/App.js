@@ -1,11 +1,22 @@
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
+import { ContactShadows, Environment, OrbitControls, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import { Picker, Case, VideoCard, MotherBoard ,Power } from "./components";
 import { useSnapshot } from "valtio";
 import state from "./state";
 import React, { useMemo } from "react";
 import * as THREE from "three";
+import { Model } from "./components/Y70";
+import { BackSides } from "./components/Y70/BackSides";
+import { GlassSides } from "./components/Y70/GlassSides";
+import { WhiteSides } from "./components/Y70/WhiteSides";
+import { VideoFrames } from "./components/Y70/VideoFrames";
+import { VideoProject } from "./components/Y70/VideoProject";
+import { BackFans } from "./components/Y70/BackFans";
+import { LoadingBar } from "./components/Loading/LoadingBar";
+import { CanvasSection } from "./components/Sections/CanvasSection";
+import { CanvasProvider } from "./contexts/Canvas/CanvasContext";
+
 
 function App() {
   const snap = useSnapshot(state);
@@ -24,6 +35,7 @@ function App() {
 
   return (
     <>
+    
       <button onClick={setShowPanel} style={{ margin: 4 }}>
         Add / Remove Panel
       </button>
@@ -33,38 +45,11 @@ function App() {
       <button onClick={setShowMotherBoard} style={{ margin: 4 }}>
         Add / Remove MotherBoard
       </button>
-      <Picker />
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 3], fov: 30 }}>
-        <ambientLight intensity={0.3} />
-        <spotLight
-          intensity={0.3}
-          angle={0.1}
-          penumbra={1}
-          position={[5, 25, 20]}
-        />
-        <Suspense fallback={null}>
-          <Case />
-          {snap.items.showVideoCart && <VideoCard />}
-          <Power />
-          <Environment preset="city" />
-          <ContactShadows
-            rotation-x={Math.PI / 2}
-            position={[0, -0.8, 0]}
-            opacity={0.25}
-            width={10}
-            height={10}
-            blur={1.5}
-            far={0.8}
-          />
-          {snap.items.showMotherBoard &&  <MotherBoard />}
-         
-
-          {/* <Grid width={3} height={3} /> */}
-          {/* <Image url={doggos} /> */}
-          {/* <Shoe/> */}
-        </Suspense>
-        <OrbitControls />
-      </Canvas>
+      <CanvasProvider>
+          <CanvasSection/>
+      </CanvasProvider>
+      
+      
     </>
   );
 }

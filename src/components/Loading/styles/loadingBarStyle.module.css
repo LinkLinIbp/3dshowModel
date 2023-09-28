@@ -1,0 +1,46 @@
+
+:root{
+    --container-width:160px;
+    --container-height:15px;
+}
+.containerDiv{
+    position: relative;
+    height: var(--container-height);
+    width: var(--container-width);
+    border-radius: 3px;
+    border:solid black 2px;
+    background-color: white;
+}
+.loadingDiv{
+    position: absolute;
+    width: 0;
+    height: var(--container-height);
+    top: 0;
+    left: 0;
+    background-color: black;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+    0%{
+        width: calc(var(--container-width)*0);
+    }
+    25%{
+        width: calc(var(--container-width)*0.65);
+    }
+    55%{
+        width: calc(var(--container-width)*0.45);
+    }
+    75%{
+        width: calc(var(--container-width)*0.95);
+    }
+    80%{
+        width: var(--container-width);
+    }
+    95%{
+        width: calc(var(--container-width)*0.85);
+    }
+    100%{
+        width: calc(var(--container-width)*0);
+    }
+}

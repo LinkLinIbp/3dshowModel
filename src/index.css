@@ -40,3 +40,8 @@ h1 {
   width: 90px !important;
   height: 90px !important;
 }
+:root{
+  --panel-background-color: rgba(180, 180, 180, 0.2);
+  --canvas-width:1500px;
+  --canvas-height:800px;
+}
