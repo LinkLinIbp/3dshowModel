@@ -49,6 +49,7 @@ export function RenderCanvas(props){
                 <SideFaces/>
                 <TopFaces/>
                 <SoundCard/>
+                
                 <PowerSupply/>
                 <VideoGears/>
                 <VideoCanvas/>
