@@ -27,7 +27,7 @@ import { FanOuters0 } from "../Y70/FanOuters0";
 import { FanOuters1 } from "../Y70/FanOuters1";
 
 export function RenderCanvas(props){
-      const { selectPinPointIndex} = useContext(CanvasContext);
+      const {selectPinPointIndex} = useContext(CanvasContext);
     return (
         <Canvas style={{height:800, width:1500}} shadows dpr={[1, 2]} camera={{fov:7, position:[-5,1,5]}}>
             <ambientLight intensity={1} />
@@ -49,7 +49,6 @@ export function RenderCanvas(props){
                 <SideFaces/>
                 <TopFaces/>
                 <SoundCard/>
-                
                 <PowerSupply/>
                 <VideoGears/>
                 <VideoCanvas/>
