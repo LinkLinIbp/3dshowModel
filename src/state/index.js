@@ -16,7 +16,8 @@ const state = proxy({
     ['Glass Basic White #2']:"#ffffff",
     showPanel:false,
     showVideoCart:true,
-    showMotherBoard:true
+    showMotherBoard:true,
+    pinPointIndex:0
   },
 });
 

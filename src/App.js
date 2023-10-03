@@ -7,12 +7,6 @@ import state from "./state";
 import React, { useMemo } from "react";
 import * as THREE from "three";
 import { Model } from "./components/Y70";
-import { BackSides } from "./components/Y70/BackSides";
-import { GlassSides } from "./components/Y70/GlassSides";
-import { WhiteSides } from "./components/Y70/WhiteSides";
-import { VideoFrames } from "./components/Y70/VideoFrames";
-import { VideoProject } from "./components/Y70/VideoProject";
-import { BackFans } from "./components/Y70/BackFans";
 import { LoadingBar } from "./components/Loading/LoadingBar";
 import { CanvasSection } from "./components/Sections/CanvasSection";
 import { CanvasProvider } from "./contexts/Canvas/CanvasContext";
@@ -31,7 +25,7 @@ function App() {
 
   const setShowMotherBoard = () => {
     state.items.showMotherBoard = !state.items.showMotherBoard;
-  };
+};
 
   return (
     <>
@@ -49,7 +43,8 @@ function App() {
           <CanvasSection/>
       </CanvasProvider>
       
-      
+      <div id="testVideoContainer"></div>
+      <div>!!!!!{snap.pinPointIndex}</div>
     </>
   );
 }

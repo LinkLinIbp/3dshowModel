@@ -86,7 +86,8 @@ export function Case(props) {
     
   });
 
-  const stickyPng = "/qUuposdUzA.jpg";
+  // const stickyPng = "/qUuposdUzA.jpg";
+  const stickyPng = "/test.gif";
   // https://zhuanlan.zhihu.com/p/601278889
   const Texture = ({ texture }) => {
     return (
@@ -563,7 +564,7 @@ export function Case(props) {
             material-color={snap.items["Glass Basic White #2"]}
             visible={snap.items.showPanel}
           >
-            {/* <StickyImage url={stickyPng} /> */}
+            <StickyImage url={stickyPng} />
           </mesh>
           <mesh
             geometry={nodes["1344715243"].geometry}

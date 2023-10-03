@@ -10,14 +10,15 @@ export function PinPoints(props) {
   const { nodes, materials } = useGLTF('/PinPoints.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Sphere.geometry} material={materials['Material.006']} material-color="red" position={[-0.12, 0.227, 0.419]} scale={0.003} onClick={()=>{props.onPinPointSelected(1)}}/>
-      <mesh geometry={nodes.Sphere001.geometry} material={materials['Material.006']} material-color="red" position={[-0.084, 0.108, 0.159]} scale={0.003} onClick={()=>{props.onPinPointSelected(2)}}/>
-      <mesh geometry={nodes.Sphere002.geometry} material={materials['Material.006']} material-color="red" position={[0.077, 0.23, 0.218]} scale={0.003} onClick={()=>{props.onPinPointSelected(3)}}/>
+      <mesh geometry={nodes.Sphere.geometry} material={materials['Material.001']} material-color="red" position={[-0.08, 0.435, 0.235]} scale={0.005} />
+      <mesh geometry={nodes.Sphere001.geometry} material={materials['Material.001']} position={[-0.022, 0.209, -0.146]} scale={0.005} />
+      <mesh geometry={nodes.Sphere002.geometry} material={materials['Material.001']} position={[0.055, 0.135, -0.112]} scale={0.005} />
+      <mesh geometry={nodes.Sphere003.geometry} material={materials['Material.001']} position={[0.063, 0.293, -0.14]} scale={0.005} />
+      <mesh geometry={nodes.Sphere004.geometry} material={materials['Material.001']} position={[-0.04, 0.078, -0.105]} scale={0.005} />
+      <mesh geometry={nodes.Sphere005.geometry} material={materials['Material.001']} position={[0.068, 0.256, -0.011]} scale={0.005} />
+      <mesh geometry={nodes.Sphere006.geometry} material={materials['Material.001']} position={[-0.088, 0.064, -0.023]} scale={0.005} />
     </group>
   )
 }
 
 useGLTF.preload('/PinPoints.glb')
-
-
-
